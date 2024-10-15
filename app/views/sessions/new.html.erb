@@ -1,0 +1,16 @@
+<h1>Log in</h1>
+<p>Log in to WigglyWord to start playing.</p>
+<%= form_with model: @user, url: login_path do |f| %>
+  <div>
+    <%= f.label :name, "Username" %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </div>
+  <p>
+    <%= f.submit 'Log in' %>
+  </p>
+<% end %>
+<%= link_to "Sign up", signup_path, class: 'btn btn-primary' %>

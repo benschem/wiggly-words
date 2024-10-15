@@ -1,0 +1,33 @@
+<h1>Sign Up</h1>
+<p>Sign up for a new WigglyWord account. Signing up will allow you to keep track of your games and scores.</p>
+<%= form_with model: @user do |f| %>
+  <% if @user.errors.any? %>
+    <div>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= f.label :name, "Username" %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div>
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <p>
+    <%= f.submit "Sign up", class: 'btn btn-primary' %>
+  </p>
+<% end %>
+<%= link_to "I already have an account", login_path %>

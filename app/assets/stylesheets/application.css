@@ -13,3 +13,46 @@
  *= require_tree .
  *= require_self
  */
+
+:root {
+  --alert-bg: #f8d7da;
+  --alert-color: #721c24;
+  --notice-bg: #d1ecf1;
+  --notice-color: #0c5460;
+
+  --padding-sm: 1rem; /* Padding using rem for scalability */
+  --margin-sm: 1.25rem 0; /* Margin using rem for consistency */
+  --border-radius: 0.3125rem; /* Border-radius in rem for consistency */
+}
+
+/* Base styles for flash notices */
+.flash {
+  padding: var(--padding-sm);
+  margin: var(--margin-sm);
+  border-radius: var(--border-radius);
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.flash.alert {
+  background-color: var(--alert-bg);
+  color: var(--alert-color);
+  border: 1px solid darken(var(--alert-bg), 10%);
+}
+
+.flash.notice {
+  background-color: var(--notice-bg);
+  color: var(--notice-color);
+  border: 1px solid darken(var(--notice-bg), 10%);
+}
+
+.btn .btn.btn-primary {
+  padding: var(--padding-sm);
+  padding: var(--padding-sm);
+  border: 1px solid darken(var(--notice-bg), 10%);
+}
+.btn.btn-secondary {
+  background-color: var(--alert-bg);
+  color: var(--alert-color);
+  border: 1px solid darken(var(--notice-bg), 10%);
+}
